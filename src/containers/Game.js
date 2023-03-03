@@ -6,26 +6,14 @@ import { getMaskedCharacters } from "../utils/getMaskedCharacters";
 import { getRandomWord } from "../utils/getRandomWord";
 
 export const Game = ({ category }) => {
-  const [word, setWord] = useState();
-  const [charachters, setCharachters] = useState([]);
-  const [strikes, setStrikes] = useState();
-
-  //Get random word form array
   const randomWord = getRandomWord(category);
-
-  //Set random word as state
-  setWord(randomWord);
-
-  //Set characters as state
   const maskedCharacters = getMaskedCharacters(randomWord);
-  setCharachters(maskedCharacters);
-
   const maxStrikes = 5;
-  setStrikes(maxStrikes);
 
-  console.log(category);
-  console.log(word);
-  console.log(charachters);
+  const [word, setWord] = useState(randomWord);
+  const [characters, setCharacters] = useState(maskedCharacters);
+  const [strikes, setStrikes] = useState(maxStrikes);
+  //Get random word form array
 
   const handleCheck = (letter) => {
     const letterToCheck = letter.toUpperCase();
@@ -42,8 +30,8 @@ export const Game = ({ category }) => {
   return (
     <section>
       <Strikes strikes={strikes} maxStrikes={maxStrikes} />
-      <Word charachters={charachters} />
-      <Keyboard handleCheck={handleCheck}/>
+      <Word characters={characters} />
+      <Keyboard handleCheck={handleCheck} />
     </section>
   );
 };

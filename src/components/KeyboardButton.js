@@ -1,20 +1,19 @@
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 import { useState } from "react";
 
-export const KeyboardButton = ({ letter, handleClick }) => {
+export const KeyboardButton = ({ letter, handleCheck }) => {
   const [isDisabled, setIsDisabled] = useState(false);
 
   const handleButtonClick = () => {
     setIsDisabled(true);
 
-    handleClick(letter);
+    handleCheck(letter);
   };
 
   return (
     <Button
       variant="outlined"
       sx={{ m: 1 }}
-      key={letter}
       disabled={isDisabled}
       onClick={handleButtonClick}
     >

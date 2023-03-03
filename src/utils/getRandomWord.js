@@ -1,5 +1,5 @@
 export const getRandomWord = (selectedCategory) => {
-  return "Top Gun";
+  return "TOP GUN";
 };
 
 // const movies = [];

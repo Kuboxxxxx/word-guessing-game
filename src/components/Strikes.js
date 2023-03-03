@@ -17,7 +17,11 @@ export const Strikes = ({ strikes, maxStrikes }) => {
       }}
     >
       {strikesArray.map((_, index) =>
-        index < strikes ? <FavoriteIcon /> : <FavoriteBorderIcon />
+        index < strikes ? (
+          <FavoriteIcon key={index} />
+        ) : (
+          <FavoriteBorderIcon key={index} />
+        )
       )}
     </Box>
   );
