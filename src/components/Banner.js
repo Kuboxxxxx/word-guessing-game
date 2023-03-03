@@ -4,19 +4,17 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import AdbIcon from "@mui/icons-material/Adb";
+import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 
 export const Banner = ({ handleReset }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <AdbIcon sx={{ display: "flex", mr: 1 }} />
+          <QuestionMarkIcon sx={{ display: "flex", mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
             sx={{
               mr: 2,
               display: "flex",
@@ -28,7 +26,7 @@ export const Banner = ({ handleReset }) => {
               flexGrow: 1,
             }}
           >
-            LOGO
+            WrdGssr
           </Typography>
           <Button color="inherit" onClick={handleReset}>
             Reset

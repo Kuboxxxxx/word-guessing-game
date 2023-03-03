@@ -2,7 +2,6 @@ import { Box, Container } from "@mui/material";
 import { useState } from "react";
 import { Banner } from "./components/Banner";
 import { Category } from "./components/Category";
-import { Keyboard } from "./components/Keyboard";
 import { Game } from "./containers/Game";
 
 export const App = () => {
@@ -20,7 +19,7 @@ export const App = () => {
   return (
     <Box>
       <Banner handleReset={handleReset} />
-      <Container maxWidth="md" sx={{ margin: "16px" }}>
+      <Container maxWidth="md" sx={{ marginTop: "26px" }}>
         {category ? (
           <Game category={category} />
         ) : (
