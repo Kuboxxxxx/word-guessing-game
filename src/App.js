@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box, Container } from "@mui/material";
+import { useState } from "react";
+import { Banner } from "./components/Banner";
+import { Category } from "./components/Category";
+import { Game } from "./containers/Game";
 
-function App() {
+export const App = () => {
+  const [category, setCategory] = useState();
+
+  const handleCategoryClick = ({ target }) => {
+    const selectedCategory = target.name;
+    setCategory(selectedCategory);
+  };
+
+  const handleReset = () => {
+    setCategory();
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <Banner handleReset={handleReset} />
+      <Container maxWidth="md" sx={{ margin: "16px" }}>
+        {category ? (
+          <Game category={category} />
+        ) : (
+          <Category handleCategoryClick={handleCategoryClick} />
+        )}
+      </Container>
+    </Box>
   );
-}
-
-export default App;
+};
