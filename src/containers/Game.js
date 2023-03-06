@@ -7,7 +7,6 @@ import { getRandomWord } from "../utils/getRandomWord";
 
 export const Game = ({ category }) => {
   const randomWord = getRandomWord(category);
-  console.log(randomWord)
   const maskedCharacters = getMaskedCharacters(randomWord);
   const maxStrikes = 5;
 
